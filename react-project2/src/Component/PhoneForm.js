@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-export default class PhoneForm extends Component {
+
+class PhoneForm extends Component {
 
     state = {
         name: '',
@@ -16,12 +17,21 @@ export default class PhoneForm extends Component {
 
     // button type="submit" 일 경우 버튼을 누르면 페이지가 refresh됨. 이를 방지.
     handleSubmit = (e) => {
+        
         e.preventDefault();
         
-        this.props.value({
+        //props로 온 데이터를 다시 부모component에
+        this.props.onCreate({
             name :this.state.name,
             phone : this.state.phone,
         });
+
+        //input에 값 입력이후에 초기화시켜주기
+        this.setState({
+            name : '',
+            phone : ''
+        })
+        
     }
 
 
@@ -31,11 +41,10 @@ export default class PhoneForm extends Component {
                 <input name="name"  placeholder="이름" onChange={this.handleChange} value={this.state.name}/>
                 <input name="phone" placeholder="전화번호" onChange={this.handleChange} value={this.state.phone}/>
                 <button type="submit">등록</button>
-                <div>
-                    {this.state.name} {this.state.phone}
-                </div>
             </form>
 
         )
     }
 }
+
+export default PhoneForm;
