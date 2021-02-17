@@ -5,7 +5,7 @@ class PhoneInfo extends Component {
     editing: false,
     name: "",
     phone: "",
-    test : true
+    
   };
 
   handleRemove = () => {
