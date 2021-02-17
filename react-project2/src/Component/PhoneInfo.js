@@ -43,6 +43,17 @@ class PhoneInfo extends Component {
 
   render() {
     const { name, phone } = this.props.info;
+
+    /** 여기서 this.state.editing하면 undefined된다.
+     * 
+     *  비구조화 할당은 아래처럼 이용함.. 배열의 경우 좌항의 index값에 값에 할당되었다면, 객체는 같은 key에 있는 값이 담긴다.
+     *  즉 this.state가 객체이므로 this.state의 key에 editing이 있으면 비구조화에 의해 const { editing } 에 세팅되는 거임.
+     * 
+     *  const { c, d, e = 3 } = { c: 1 };
+        console.log(d); // undefined
+        console.log(e); // 3
+     *  
+     */
     const { editing } = this.state;
  
     
