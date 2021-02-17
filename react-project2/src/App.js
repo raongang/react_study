@@ -47,11 +47,26 @@ class App extends Component {
   }
 
   handleRemove = (id) => {
+    console.log("this");
     const {infomation} = this.state;
-
     this.setState({
       infomation : infomation.filter(info => info.id !== id)
     })
+  }
+
+  handleUpdate = (id,data) => {
+    const { infomation } = this.state;
+    this.setState({
+      infomation : infomation.map(info => {
+        if(info.id === id){
+          return{
+            id,
+            ...data
+          };
+        }
+        return info;
+      })
+    });
   }
 
   //자식 component인 PhoneForm에 props로 전달.
@@ -64,7 +79,9 @@ class App extends Component {
          */}
          <PhoneInfoList 
          data={this.state.infomation} 
-         onRemove={this.handleRemove} />
+         onRemove={this.handleRemove} 
+         onUpdate={this.handleUpdate}
+         />
          
       </div>
     )
