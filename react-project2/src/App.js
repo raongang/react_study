@@ -10,8 +10,17 @@ class App extends Component {
   //어떤 값이 변경되었을때 리렌더링하기 위해서 state를 사용.
   state = {
     infomation : [], //배열선언
+    keyword: ''
   }
   
+  //handleChange가 실행되어 APP 컴포넌트의 상태가 업데이트 되면, 컴포넌트의 리렌더링이 발생하고, 컴포넌트가 리렌더링되면 그 컴포넌트의 자식
+  //컴포넌트도 리렌더링됨.
+  handleChange = (e) => { 
+    this.setState({
+      keyword : e.target.value,
+    });
+  }
+
   handleCreate = (data) =>{
   
     //비구조 할당
@@ -47,7 +56,7 @@ class App extends Component {
   }
 
   handleRemove = (id) => {
-    console.log("this");
+    
     const {infomation} = this.state;
     this.setState({
       infomation : infomation.filter(info => info.id !== id)
@@ -71,14 +80,27 @@ class App extends Component {
 
   //자식 component인 PhoneForm에 props로 전달.
   render() {
+
+    const { infomation , keyword } = this.state;
+
     return (
       <div>
          <PhoneForm onCreate={this.handleCreate}/>
          {/*
          {JSON.stringify(this.state.infomation)}
          */}
+
+         <p>
+           <input placeholder="검색 할 이름을 입력하세요.."
+                  onChange={this.handleChange}
+                  value={keyword}
+            />
+         </p>
+         <hr />
+
          <PhoneInfoList 
-         data={this.state.infomation} 
+         //data={this.state.infomation} 
+         data={infomation}
          onRemove={this.handleRemove} 
          onUpdate={this.handleUpdate}
          />

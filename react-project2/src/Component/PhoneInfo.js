@@ -42,6 +42,9 @@ class PhoneInfo extends Component {
   };
 
   render() {
+    
+    console.log('render PhoneInfo');
+    
     const { name, phone } = this.props.info;
 
     /** 여기서 this.state.editing하면 undefined된다.
