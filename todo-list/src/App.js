@@ -84,7 +84,7 @@ class App extends Component{
         <Form value={input}
               onKeyPress = {handleKeyPress}
               onChange = {handleChange}
-              onCrate = {handleCreate}
+              onCreate = {handleCreate}
         />
     )}>
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
