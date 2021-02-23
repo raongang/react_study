@@ -83,8 +83,16 @@ class App extends Component {
 
     const { infomation , keyword } = this.state;
 
+
+    //callback 함수의 retrun은 boolean, return이 true인 애들만 모아서 새로운 배열을 생성. 생략시 return은 undefined 이므로 빈 배열 생성됨. 즉 검색 키워드가 있으면 표시 없으면 안보여지는거임.
+    const filteredList = infomation.filter(
+      info => info.name.indexOf(keyword) !== -1
+    );
+    
+
     return (
       <div>
+         
          <PhoneForm onCreate={this.handleCreate}/>
          {/*
          {JSON.stringify(this.state.infomation)}
@@ -100,7 +108,7 @@ class App extends Component {
 
          <PhoneInfoList 
          //data={this.state.infomation} 
-         data={infomation}
+         data={filteredList}
          onRemove={this.handleRemove} 
          onUpdate={this.handleUpdate}
          />
