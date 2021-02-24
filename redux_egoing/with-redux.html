@@ -17,6 +17,8 @@
 
     <div id="red"></div>
     <div id="blue"></div>
+    <div id="green"></div>
+
     
     <script>
         /* redux #2  - reducer
@@ -38,12 +40,19 @@
                 newState = Object.assign({},state,{color: action.color});
                 
             }
+
+            console.log(action.type,action,state,newState);
+
             return newState;
         }
     
         
         //redux #1 - store
-        var store = Redux.createStore(reducer);
+        var store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            
+        );
 
         //redux #3 - getState (store에 있는 값을 가져오기)
         //console.log(store.getState());
@@ -93,6 +102,23 @@
         store.subscribe(blue);
         //최초실행
         blue();         
+
+
+        function green(){
+            var state = store.getState(); 
+            document.querySelector('#green').innerHTML = `
+                <div class="container" id="component_blue" style="background-color:${state.color}">
+                    <h1>green</h1>
+                    <input type="button" value="fire" 
+                        onclick="store.dispatch({type:'CHANGE_COLOR',color:'green'});">
+                </div>
+            `;
+        }
+
+        store.subscribe(green);
+        //최초실행
+        green();    
+
 
     </script>
 
