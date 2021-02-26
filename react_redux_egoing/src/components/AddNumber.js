@@ -4,7 +4,7 @@ export default class AddNumber extends Component {
     state = {size:1}
 
     handleChange = (e) =>{
-      this.setState({size: e.target.value})
+      this.setState({size: Number(e.target.value)})
     }
 
     onclickHandle = () => {
