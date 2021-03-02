@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 
-
 class DisplayNumber extends Component {
     render() {
       return (

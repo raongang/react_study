@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
-import store from '../store';
-
 export default class AddNumber extends Component {
     
     state = {size:1}
 
+    
     handleChange = (e) =>{
       this.setState({size: Number(e.target.value)})
     }
 
     onclickHandle = () => {
-      //this.props.onClick(this.state.size); 
-      store.dispatch({type:'INCREMENT', size:this.state.size})
+      this.props.onClick(this.state.size); 
     }
 
     render() {
+     
       return (
         <div>
           <h1>Add Number</h1>
 
-          
           {/* 자식컴포넌트(AddNumber)에서 부모컴포넌트(AddNumberRoot)로 입력데이터 전달하기.
 
                1. 자식컴포넌트에서 부모로 전달할 데이터를 정하고 자식컴포넌트에서 함수를 정의한다.
@@ -32,8 +30,8 @@ export default class AddNumber extends Component {
           */} 
 
           <input type="button" value="+" onClick={this.onclickHandle}></input>
-          <input type="text" value={this.state.size} onChange={this.handleChange}></input>  
-          
+          <input type="text" value={this.state.size} onChange={this.handleChange}></input>            
+        
         </div>
       )
     }

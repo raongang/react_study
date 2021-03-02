@@ -1,3 +1,8 @@
+
+소스 설명 
+ 
+ React Redux 를 적용하기 전 rudux가 적용되지 않는 소스에서 redux를 적용하고, 이를 다시 wrapping을 통해 부품화를 한다.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
