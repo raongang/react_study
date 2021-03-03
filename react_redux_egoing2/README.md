@@ -6,6 +6,7 @@ react_redux_egoing1에서는 redux만 적용하고, 이에 부품화를 위해 w
 
 설치
 npm install redux
+
 npm install react-redux
 
 
