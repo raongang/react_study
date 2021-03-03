@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import TodoListTemplate from './components/TodoTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
+import store from './store';
 
 class App extends Component{
 
@@ -42,6 +43,8 @@ class App extends Component{
     }
   }
 
+  
+  /*
   handleToggle = (id) =>{
     const { todos }  = this.state;
 
@@ -62,6 +65,12 @@ class App extends Component{
        todos : nextTodos
      });
     }
+*/
+  handleToggle = (id) =>{
+    store.dispatch({type:'TOGGLE'})
+  }
+
+
 
     handleRemove = (id) => {
       const { todos } = this.state;
