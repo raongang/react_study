@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body>
+        <h1 id="number">0</h1>
+        <button id="increment">+</button>
+        <button id="decrement">-</button>
+
+        <script src="https://cdnjs.cludflare.com/ajax/libs/redux/3.6.0/redux.js"></script>
+
+        <script>
+            //편의를 위해 각 DOM elemnt에 대한 reference를 만들어준다.
+            const elNumber = document.getElementById('number');
+            const btnIncrement = document.getElementById('increment');
+            const btnDecrement = document.getElementById('decrement');
+
+            //액션 타입을 정의해줍니다.
+            const INCREMENT = 'INCREMENT';
+            const DECREMENT = 'DECREMENT';
+
+            //액션 객체를 만들어주는 액션 생성 함수.
+            const increment = (diff) => ({ type : INCREMENT, diff : diff});
+            const decrement = () => ({ type : DECREMENT });
+
+            //초기값을 설정합니다. 
+            const initialState = { number : 0 };
+
+            /*
+                reducer 선언 
+                  - state와 action 을 파라미터로 받아옵니다.
+            */
+
+            const counter = (state= initialState, action) => {
+                console.log(state, action);
+
+                switch(action.type){
+                    case INCREMENT : 
+                        return { number : state.number + action.diff };
+                    case DECREMENT : 
+                        return { number : state.number - 1 };
+                    default : 
+                        return state;
+                }
+            }
+
+        //redux #1 - store
+        var store = Redux.createStore(
+            counter,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            
+        );            
+
+            // 상태가 변경시킬때마다 호출시킬 listener 함수. => 즉, subscribe 로 보면 됨.
+            const render = () => {
+                elNumber.innerText = store.getState().number;
+                console.log("render 실행");
+            }
+
+            //스토어에 구독을 하고, 뭔가 변화가 있다면, render함수를 실행한다.
+            store.subscribe(render);
+            //초기 render를 위해 직접 실행
+            render();
+
+
+            //버튼에 이벤트를 적용한다. 스토어에 변화를 일으키라고 할때에는 dispatch 함수에 action 객체를 넣어서 호출한다.
+            btnIncrement.addEventListener('click',()=>{
+                store.dispatch(increment(25));
+            })
+
+            btnDecrement.addEventListener('click',()=>{
+                store.dispatch(decrement());
+            })
+
+        </script>
+    </body>
+</html>

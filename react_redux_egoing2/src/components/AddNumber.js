@@ -3,7 +3,6 @@ export default class AddNumber extends Component {
     
     state = {size:1}
 
-    
     handleChange = (e) =>{
       this.setState({size: Number(e.target.value)})
     }

@@ -3,7 +3,6 @@ import TodoListTemplate from './components/TodoTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 
-
 class App extends Component{
 
   //초기 state 설정
@@ -43,7 +42,6 @@ class App extends Component{
     }
   }
 
-
   handleToggle = (id) =>{
     const { todos }  = this.state;
 
@@ -65,9 +63,6 @@ class App extends Component{
      });
     }
 
-
-
-
     handleRemove = (id) => {
       const { todos } = this.state;
       this.setState({
@@ -75,9 +70,7 @@ class App extends Component{
       });
     }
 
-
   render(){
-
 
     const { input, todos} = this.state;
     const { handleChange, handleCreate, handleKeyPress, handleToggle, handleRemove } = this;
@@ -88,10 +81,11 @@ class App extends Component{
               onKeyPress = {handleKeyPress}
               onChange = {handleChange}
               onCreate = {handleCreate}
-        />
-    )}>
+        />)}>
+
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>
+      
     )
     
   }
