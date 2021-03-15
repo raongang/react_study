@@ -34,8 +34,7 @@ export default class App extends Component {
    *    ex1)   () => { return { a: 1 }} 이 부분이 () => ( {a: 1 } ) 이거와 같아지는거임.
    *   3. 즉, 아래 부분은 객체의 비구조화 할당에 해당한다.
    *   4. users:users.concat 부분에서 users.concat의 users는 const { input, users } = this.state; 이 부분에서 받아왔기 때문에 알수 있는거임.
-   *   
- 
+   
   onButtonClick = (e) => {
     this.setState(
       ({ users, input }) => (
@@ -48,8 +47,9 @@ export default class App extends Component {
         }
       )
     )
-  }    
-  */
+  }
+  */       
+  
 
   /*
        여기서 만약, text에 값을 입력하게 될 경우, User.js, UserList.js 모두 리렌더링된다.
