@@ -84,7 +84,7 @@ export default class App extends Component {
     })
   }
 
-  onChnage = (e) => {
+  onChange = (e) => {
     console.log("this >> " , this);
     const { value } = e.target;
     const { data } = this.state;

@@ -20,7 +20,6 @@ class LifeCycleMyComponent extends Component{
                 value : nextProps.value
             }
         }
-
         // return null; 변경할 값이 없을떄.
     }
 
