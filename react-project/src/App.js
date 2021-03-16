@@ -2,8 +2,6 @@
 import './App.css';
 import React, { Component, Fragment } from 'react'
 
-
-
 /* JSX 표현식2 */
 class App extends Component{
   render(){

@@ -5,7 +5,6 @@ export default createStore(function(state,action){
     console.log(state,action);
    
     // store의 state초기값 설정 
-
     if(state === undefined){
         return { number : 0 }
 
