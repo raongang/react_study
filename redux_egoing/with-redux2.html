@@ -21,12 +21,12 @@
             const btnDecrement = document.getElementById('decrement');
 
             //액션 타입을 정의해줍니다.
-            const INCREMENT = 'INCREMENT';
-            const DECREMENT = 'DECREMENT';
+            const INCREMENT_TYPE = 'INCREMENT';
+            const DECREMENT_TYPE = 'DECREMENT';
 
             //액션 객체를 만들어주는 액션 생성 함수.
-            const increment = (diff) => ({ type : INCREMENT, diff : diff});
-            const decrement = () => ({ type : DECREMENT });
+            const increment = (diff) => ({ type : INCREMENT_TYPE, diff : diff});
+            const decrement = () => ({ type : DECREMENT_TYPE });
 
             //초기값을 설정합니다. 
             const initialState = { number : 0 };
@@ -40,9 +40,9 @@
                 console.log(state, action);
 
                 switch(action.type){
-                    case INCREMENT : 
+                    case INCREMENT_TYPE : 
                         return { number : state.number + action.diff };
-                    case DECREMENT : 
+                    case DECREMENT_TYPE : 
                         return { number : state.number - 1 };
                     default : 
                         return state;

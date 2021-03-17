@@ -21,8 +21,8 @@ export default class TodoItemList extends Component {
          const { todos, onToggle, onRemove } = this.props;
 
 
-        const todoList = todos.map(({id,text,checked}) => (
-            <TodoItem id={id}
+         const todoList = todos.map(({id,text,checked}) => (
+           <TodoItem id={id}
             text = {text}
             checked={checked}
             onToggle={onToggle}
@@ -31,11 +31,12 @@ export default class TodoItemList extends Component {
             />
             )
         );
-
+        
 
          return (
              <div>{todoList}</div>
          )
+         
      }
  }
  

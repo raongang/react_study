@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // application의 최상위에 APP Component의 상위컴포넌트를 가져온다 - Provider.
-import {Prodivder, Provider} from 'react-redux';
+import {Provider } from 'react-redux';
 import store from './store';
 
 ReactDOM.render(

@@ -20,6 +20,7 @@ class TodoItem extends Component {
         }>&times;</div>
 
         {/* css를 유동적으로 사용하고 싶을떄는 template literal 사용가능 */}
+        
         <div className={`todo-text ${ checked ? ' checked' : '' }`}>
           <div>{text}</div>
         </div>
