@@ -9,12 +9,10 @@ export default connect(null,mapReduxDispatchToReactProps)(AddNumber);
 // store의 dispatcher를 파라미터로 제공해준다.
 function mapReduxDispatchToReactProps(dispatch){
     return{
-
-        onClick : function(size){
-            dispatch({type:'INCREMENT', size:size})
-        }
+        onClick : (size) =>  dispatch({type:'INCREMENT', size:size})
     }
 }
+
 
 /* 
 

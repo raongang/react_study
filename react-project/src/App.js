@@ -9,7 +9,7 @@ class App extends Component{
       backgroundColor : 'black',
       padding : '16px',
       color : 'white',
-      fontSize : '36px'
+      fontSize : '36px' 
     };
 
     return (
