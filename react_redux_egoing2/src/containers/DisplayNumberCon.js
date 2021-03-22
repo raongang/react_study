@@ -33,7 +33,7 @@ export default class DisplayNumberCon extends Component {
         this.setState({number : store.getState().number});
       });
     }
-
+    
     render() {
         return <DisplayNumber number={this.state.number} 
                               unit={this.props.unit}>

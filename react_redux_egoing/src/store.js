@@ -8,7 +8,6 @@ export default createStore(function(state,action){
 
     if(state === undefined){
         return { number : 0 }
-
     }
 
     if(action.type === 'INCREMENT'){

@@ -34,6 +34,7 @@ export default class App extends Component {
    *    ex1)   () => { return { a: 1 }} 이 부분이 () => ( {a: 1 } ) 이거와 같아지는거임.
    *   3. 즉, 아래 부분은 객체의 비구조화 할당에 해당한다.
    *   4. users:users.concat 부분에서 users.concat의 users는 const { input, users } = this.state; 이 부분에서 받아왔기 때문에 알수 있는거임.
+   *      - users.concat의 users는 callback이며, bind를 해줘야 하지만 -> 화살표에 의해 bind없이 사용가능.
    
   onButtonClick = (e) => {
     this.setState(
