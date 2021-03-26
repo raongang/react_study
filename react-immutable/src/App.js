@@ -7,7 +7,6 @@ export default class App extends Component {
   //초기세팅
   id=3;
 
-
   /** ============================= Immutable 적용전 ============================= */
   //객체형식이어야한다.
   /*

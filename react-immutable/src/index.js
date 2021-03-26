@@ -17,8 +17,10 @@ import { Map, List } from 'immutable';
   7. 일반 자바스크립트 객체로 변환 할 땐 toJS
   8. List 엔 배열 내장함수와 비슷한 함수들이 있다 – push, slice, filter, sort, concat… 전부 불변함을 유지함
   9. 특정 key 를 지울때 (혹은 List 에서 원소를 지울 때) delete 사용
-  
+
+
 //1. 객체는 Map
+
 const obj = Map(
   {
   foo : 1,
@@ -26,7 +28,7 @@ const obj = Map(
     bar : 10
   })
 });
-
+      
 console.log("============ 1. 객체 출력 ============");
 console.log(obj);
 
@@ -79,8 +81,6 @@ const arr = List(
   nextArr = nextArr.delete(0);
   console.log(nextArr.toJS());
 */
-
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -92,3 +92,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
