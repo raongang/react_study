@@ -16,3 +16,6 @@ npm install redux
 npm install react-redux 
 
 
+<< 배포 >>
+
+npm run build
