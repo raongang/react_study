@@ -15,7 +15,12 @@ npm install redux
 
 npm install react-redux 
 
+yarn add react-router-dom 
+
 
 << 배포 >>
 
 npm run build
+
+
+
