@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 
 class App extends Component {
 
-  
- 
   //component가 mounting될때 state의 초기값 설정. lifeCycle.
   constructor(props){
     super(props);
@@ -16,7 +14,6 @@ class App extends Component {
     //this.handleClick = this.handleClick.bind(this);
     //console.log("after bind this : " , this.handleClick);
   }
-
 
   /* 이렇게 하면 this는 undefined. 콜백함수 및 내부 함수는 모두 전역을 가르키므로.
   constructor에서 bind를 해줘야 함.
@@ -33,8 +30,7 @@ class App extends Component {
       isToggleOn : this.state.isToggleOn
     }))
   }
-
-
+  
   render() {
     return (       
       <button onClick={this.handleClick}>
@@ -45,4 +41,6 @@ class App extends Component {
 }
 
 export default App;
+
+
 
